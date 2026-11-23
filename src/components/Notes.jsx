@@ -24,7 +24,7 @@ function Notes() {
     const saved = localStorage.getItem('draft')
     return saved ? JSON.parse(saved) : { title: '', body: '' }
   })
-  
+
   const [search, setSearch] = useState('')
   const titleRef = useRef(null)
 
@@ -67,7 +67,7 @@ function Notes() {
 
   const handleDelete = useCallback((id) => {
     setNotes((prevNotes) => prevNotes.filter((note) => note.id !== id))
-  }, [notes])
+  }, [])
 
   const filteredNotes = useMemo(() => {
     return notes.filter((note) =>
